@@ -3,3 +3,5 @@
 backup.js
 # Session folder
 /plume-session/
+# Release file
+plume-v1.0.0.zip
