@@ -1,0 +1,60 @@
+{
+  "users": {
+    "6287727682210@s.whatsapp.net": {
+      "banned": false,
+      "bannedDate": 0,
+      "limit": 100,
+      "premium": false,
+      "premiumDate": 0,
+      "warn": 0
+    }
+  },
+  "chats": {
+    "120363386611878298@g.us": {
+      "isBanned": false,
+      "welcome": true,
+      "autoread": false,
+      "simi": false,
+      "ai": false,
+      "ngetik": false,
+      "autoVn": false,
+      "stiker": false,
+      "antiSticker": false,
+      "antiBadword": false,
+      "antiSpam": false,
+      "antiBot": true,
+      "detect": false,
+      "autoJpm": false,
+      "delete": true,
+      "antiLink": false,
+      "tikauto": false,
+      "captcha": false,
+      "antifoto": false,
+      "antividio": false,
+      "antiPorn": false,
+      "antiVirtex": false,
+      "freply": false,
+      "viewonce": false,
+      "useDocument": false,
+      "antiToxic": false,
+      "expired": 0
+    }
+  },
+  "settings": {
+    "6287727682210@s.whatsapp.net": {
+      "self": false,
+      "autoread": false,
+      "restrict": true,
+      "autorestart": true,
+      "composing": true,
+      "restartDB": 0,
+      "gconly": true,
+      "status": 0,
+      "anticall": true,
+      "clear": true,
+      "clearTime": 0,
+      "freply": true,
+      "akinator": {}
+    }
+  }
+}
