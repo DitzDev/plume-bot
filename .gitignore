@@ -5,3 +5,5 @@ backup.js
 /plume-session/
 # Release file
 plume-v1.0.0.zip
+# Database file
+database.json

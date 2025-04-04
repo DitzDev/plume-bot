@@ -81,9 +81,6 @@ const {
     JSONFile
 } = low
 const mongoDB = require('./lib/mongoDB');
-const { console } = require("inspector/promises");
-const { checkForUpdates } = require("./lib/update-checker");
-
 
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse());
 global.prefix = new RegExp('^[' + (opts['prefix'] || '芒鈧絰zXZ/i!#$%+脗拢脗垄芒鈥毬偮脗掳=脗露芒藛鈥犆冣€斆兟访忊偓芒藛拧芒艙鈥溍偮┟偮�:;?&.\\-').replace(/[|\\{}()[\]^$+*?.\-\^]/g, '\\$&') + ']')
@@ -137,10 +134,7 @@ async function connectToWhatsApp() {
             chalk.yellowBright("[!] Masukan nomor telepon WhatsApp di awali dengan 628xx: ")
         );
         const code = await conn.requestPairingCode(phoneNumber);
-        console.log(
-            chalk.bgGreen(chalk.black("Your Pairing Code")),
-            chalk.green(code.slice(0, 4) + "-" + code.slice(4))
-        );
+        consoleInfo(`Kode pairing code kamu: ${code.slice(0, 4)}-${code.slice(4)}`);
     }
 
     conn.ev.on("creds.update", saveCreds);
@@ -245,18 +239,4 @@ async function connectToWhatsApp() {
     return conn;
 }
 
-async function startBot() {
-    const shouldContinue = await checkForUpdates('DitzDev', 'plume-bot');
-
-    if (shouldContinue) {
-        connectToWhatsApp();
-    } else {
-        consoleInfo(chalk.yellow('Program paused due to pending update. Please update first or restart with --no-update flag to skip.'));
-        if (process.argv.includes('--no-update')) {
-            consoleInfo(chalk.yellow('Continuing without update as requested...'));
-            connectToWhatsApp();
-        }
-    }
-}
-
-startBot();
+connectToWhatsApp();
